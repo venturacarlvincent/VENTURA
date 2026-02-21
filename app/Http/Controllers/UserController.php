@@ -27,4 +27,12 @@ class UserController extends Controller
     public function index(UserService $userService) {
         return $userService->listUsers();
     }
+
+    public function get(UserService $userService, $id) {
+    $user = collect($userService->listUsers())->filter(function ($item) use ($id) {
+        return $item['id'] == $id;
+    })->first();
+
+    return $user;
+}
 }
