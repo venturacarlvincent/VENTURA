@@ -24,8 +24,13 @@ class UserController extends Controller
     ];
     return response()->json($users);
 }
+    
     public function index(UserService $userService) {
-        return $userService->listUsers();
+        return view('users.index', ['users' => $userService->listUsers()]);
+    }
+
+    public function first(UserService $userService) {
+        return collect($userService->listUsers())->first();
     }
 
     public function get(UserService $userService, $id) {

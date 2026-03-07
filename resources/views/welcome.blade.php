@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+<x-layout>
+    <x-slot:heading>
+        Welcome
+    </x-slot:heading>
 
     <style>
         body {
@@ -33,16 +31,8 @@
         }
     </style>
 
-</head>
-<body>
-
-<div class="container">
-
-    <h1>Welcome!</h1>
-
-    <p>Hello, <strong>{{ $name }}</strong>!</p>
-
-</div>
-
-</body>
-</html>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Hello, <strong>{{ $name }}</strong>!</p>
+    </div>
+</x-layout>
